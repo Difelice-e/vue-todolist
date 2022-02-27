@@ -23,7 +23,7 @@ let app = new Vue(
             ],
         }, 
         methods: {
-            addToDo: function{
+            addToDo: function () {
                 if(this.newToDo !== ''){
                   const item = {
                     text: this.newToDo,
@@ -33,6 +33,10 @@ let app = new Vue(
                   this.newToDo = '';
                 }
               },
+            removeToDo: function(i) {
+                this.toDoList.splice(i, 1);
+                console.log('cancella')
+            }
         }
     }
 )
