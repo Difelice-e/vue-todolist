@@ -2,6 +2,7 @@ let app = new Vue(
     {
         el: '#container-vue',
         data: {
+            newToDo: '',         
             toDoList: [
                 {
                     text: 'Fare la Spesa',
@@ -9,7 +10,7 @@ let app = new Vue(
                 },
                 {
                     text: 'Completare la todolist',
-                    done: false
+                    done: true
                 },
                 {
                     text: 'Dare da mangiare al cane',
@@ -21,6 +22,17 @@ let app = new Vue(
                 },
             ],
         }, 
-        methods: {}
+        methods: {
+            addToDo: function{
+                if(this.newToDo !== ''){
+                  const item = {
+                    text: this.newToDo,
+                    done: false,
+                  };
+                  this.toDoList.push(item);
+                  this.newToDo = '';
+                }
+              },
+        }
     }
 )

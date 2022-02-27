@@ -15,15 +15,15 @@
         <div class="row">
             <div class="col px-5 py-3">
                 <h1 class="text-center text-uppercase text-success mb-3">Toboolist 2.0</h1>
-                <input type="text">
-                <button type="button" class="btn btn-outline-success px-5">Crea</button>
+                <input v-model="newToDo" type="text">
+                <button @click="addToDo" type="button" class="btn btn-outline-success px-5">Crea</button>
             </div>
 
             <div class="row">
                 <div class="col-6">
                     <ul>
-                        <li class="d-flex justify-content-between align-center border border-success rounded p-3 my-3" v-for="item in toDoList">
-                            {{item.text}} <i class="fa-solid fa-x text-danger"></i>
+                        <li class="d-flex justify-content-between align-center text-light border border-success rounded p-3 my-3" v-for="item in toDoList">
+                            <p :class="item.done = true ? 'done' : ' ' ">{{item.text}}</p> <i class="fa-solid fa-x text-danger"></i>
                         </li>
                     </ul>
                 </div>
