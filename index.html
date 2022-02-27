@@ -23,7 +23,7 @@
                 <div class="col-6">
                     <ul>
                         <li class="d-flex justify-content-between align-center text-light border border-success rounded p-3 my-3" v-for="item in toDoList">
-                            <div :class="item.done == true ? 'done' : ' ' ">{{item.text}}</div> <i @click="removeToDo(i)" class="fa-solid fa-x text-danger"></i>
+                            <div @click="doneOrNot(item)" :class="item.done == true ? 'done' : ' ' ">{{item.text}}</div> <i @click="removeToDo(i)" class="fa-solid fa-x text-danger"></i>
                         </li>
                     </ul>
                 </div>

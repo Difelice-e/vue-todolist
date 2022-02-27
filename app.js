@@ -36,7 +36,14 @@ let app = new Vue(
             removeToDo: function(i) {
                 this.toDoList.splice(i, 1);
                 console.log('cancella')
-            }
+            },
+            doneOrNot: function(item) {
+                if (item.done == false){
+                    item.done = true;
+                } else {
+                    item.done = false;
+                }
+            },
         }
     }
 )
